@@ -3,8 +3,8 @@ body, html {
     margin: 0;
 }
 
-.controls {
-    display: none;
+.lil-gui {
+    display: none !important;
 }
 
 canvas {
