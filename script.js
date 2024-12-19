@@ -1,7 +1,5 @@
 import GUI from "https://cdn.jsdelivr.net/npm/lil-gui@0.18.2/+esm"
 
-document.querySelector('.lil-gui').remove();
-
 const canvasEl = document.querySelector("canvas");
 const textureEl = document.createElement("canvas");
 const textureCtx = textureEl.getContext("2d");
