@@ -21,7 +21,7 @@ const params = {
     fontSize: 33,
     text: "SLUTZ",
     pointerSize: null,
-    color: {r: 255., g: 20., b: 147.}
+    color: {r: 0., g: 0., b: 1.}
 };
 
 const pointer = {
