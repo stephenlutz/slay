@@ -19,7 +19,7 @@ const params = {
     fontName: "Arial",
     isBold: false,
     fontSize: 33,
-    text: "SLUTZ",
+    text: "coming soon",
     pointerSize: null,
     color: {r: 0., g: 0., b: 1.}
 };
