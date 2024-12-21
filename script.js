@@ -21,7 +21,7 @@ const params = {
     fontSize: 33,
     text: "coming soon",
     pointerSize: null,
-    color: {r: 0., g: 0., b: 1.}
+    color: {r: 0., g: 1., b: 0.}
 };
 
 const pointer = {
