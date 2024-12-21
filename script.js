@@ -16,9 +16,9 @@ const fontOptions = {
 }
 
 const params = {
-    fontName: "Verdana",
+    fontName: "Arial",
     isBold: false,
-    fontSize: 42,
+    fontSize: 33,
     text: "SLUTZ",
     pointerSize: null,
     color: {r: 255., g: 20., b: 147.}
