@@ -29,11 +29,13 @@ a {
   left: 50%;
   animation: a 8s linear infinite;
   transform-origin: center center;
+  /* Add a default scale that works across devices */
+  transform: scale(0.8);
 }
 
 @keyframes a {
   to {
-    transform: translatey(12.8em) rotatey(-1turn);
+    transform: scale(0.8) translatey(12.8em) rotatey(-1turn);
   }
 }
 .pos {
@@ -327,5 +329,28 @@ a {
 @media only screen and (max-width: 768px) {
   body {
     perspective: 40em; /* Reduced perspective for smaller screens */
+  }
+  
+  .a3d {
+    transform: scale(0.5); /* Scale down more on mobile devices */
+  }
+  
+  @keyframes a {
+    to {
+      transform: scale(0.5) translatey(12.8em) rotatey(-1turn);
+    }
+  }
+}
+
+/* For very small screens, scale down even more */
+@media only screen and (max-width: 480px) {
+  .a3d {
+    transform: scale(0.4); /* Scale down even more on very small devices */
+  }
+  
+  @keyframes a {
+    to {
+      transform: scale(0.4) translatey(12.8em) rotatey(-1turn);
+    }
   }
 }
