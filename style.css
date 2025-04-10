@@ -1,9 +1,18 @@
-body {
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  height: 100vh;
+}
+
+body {
   perspective: 80em;
   perspective-origin: 50% calc(50% - 36em);
   background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div {
@@ -11,10 +20,15 @@ div {
   transform-style: preserve-3d;
 }
 
+a {
+  display: none; /* Hide any link elements */
+}
+
 .a3d {
   top: 50%;
   left: 50%;
   animation: a 8s linear infinite;
+  transform-origin: center center;
 }
 
 @keyframes a {
@@ -307,4 +321,11 @@ div {
   --a: 90deg;
   background-image: repeating-conic-gradient(transparent 0deg, transparent 90deg, black 0deg, black 180deg);
   background-size: 1em 1em;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+  body {
+    perspective: 40em; /* Reduced perspective for smaller screens */
+  }
 }
