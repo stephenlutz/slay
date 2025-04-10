@@ -25,12 +25,43 @@ function loop(time) {
   requestAnimationFrame(loop);
 }
 
+function updateCanvasSize() {
+  // Force recalculation of canvas size
+  const pixelRatio = window.devicePixelRatio || 1;
+  glea.resize();
+  
+  // Ensure the canvas is properly sized for mobile
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+
 function setup() {
   const { gl } = glea;
-  window.addEventListener('resize', () => {
-    glea.resize();
-  });
+  
+  // Initial size setup
+  updateCanvasSize();
+  
+  // Handle both orientation changes and resize events
+  window.addEventListener('resize', updateCanvasSize);
+  window.addEventListener('orientationchange', updateCanvasSize);
+  
+  // Handle iOS Safari specific issues
+  document.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+  
+  // Address the iOS visual viewport issues
+  window.visualViewport?.addEventListener('resize', updateCanvasSize);
+  
   loop(0);
 }
 
-setup();
+// Fix for Safari mobile full height
+function resetHeight() {
+  document.body.style.height = window.innerHeight + 'px';
+}
+
+window.addEventListener('load', () => {
+  resetHeight();
+  setup();
+});
+
+window.addEventListener('resize', resetHeight);
+window.addEventListener('orientationchange', resetHeight);
