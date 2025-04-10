@@ -1,4 +1,4 @@
-body {
+html, body {
   background-color: #000;
   overflow: hidden;
   margin: 0;
@@ -6,14 +6,35 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+body {
+  min-height: 100vh;
+  /* Support for mobile browsers that calculate height differently */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 canvas {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: block;
   touch-action: none;
+  /* Fix for iOS height calculation */
+  height: -webkit-fill-available;
+}
+
+/* Hide any potential scrollbars */
+::-webkit-scrollbar {
+  display: none;
 }
